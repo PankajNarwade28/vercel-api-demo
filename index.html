@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vercel API Demo</title>
+  <style>
+    body { font-family: Arial; background: #f0f0f0; text-align: center; padding: 40px; }
+    h1 { color: #0070f3; }
+    p { color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Vercel API Demo</h1>
+  <p>Click below to test API response:</p>
+  <button onclick="testAPI()">Test API</button>
+  <p id="result"></p>
+
+  <script>
+    async function testAPI() {
+      const res = await fetch('/api/hello');
+      const data = await res.json();
+      document.getElementById('result').innerText = data.message;
+    }
+  </script>
+</body>
+</html>
